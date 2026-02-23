@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  /* This wires up our custom Next.js fonts natively in v4 */
+  --font-sans: var(--font-space);
+  --font-mono: var(--font-mono);
+}
