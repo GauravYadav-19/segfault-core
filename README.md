@@ -39,7 +39,8 @@ Currently in active development. We are building this system in structured phase
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key    
    ```
 4. Start the Turbopack development server:
-   ```npm run dev
+   ```
+   npm run dev
    ```
 
 🛡️ Engineering Philosophy
