@@ -1,0 +1,814 @@
+[
+  {
+    "slug": "two-sum",
+    "title": "Operation: Two Sum",
+    "difficulty": "Easy",
+    "description": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to target. You may assume exactly one solution.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        // Your optimized logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def twoSum(self, nums: list[int], target: int) -> list[int]:\n        # Your optimized logic here\n        pass"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> nums = {2, 7, 11, 15};\n    vector<int> res = sol.twoSum(nums, 9);\n    if (res.size() == 2 && ((res[0]==0 && res[1]==1) || (res[0]==1 && res[1]==0))) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    res = sol.twoSum([2, 7, 11, 15], 9)\n    if res == [0, 1] or res == [1, 0]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')"
+    }
+  },
+  {
+    "slug": "palindrome-number",
+    "title": "Operation: Palindrome",
+    "difficulty": "Easy",
+    "description": "Given an integer `x`, return true if `x` is a palindrome, and false otherwise. An integer is a palindrome when it reads the same forward and backward.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPalindrome(int x) {\n        // Your optimized logic here\n        return false;\n    }\n};",
+      "python": "class Solution:\n    def isPalindrome(self, x: int) -> bool:\n        # Your optimized logic here\n        pass"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.isPalindrome(121) == true && sol.isPalindrome(-121) == false) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.isPalindrome(121) == True and sol.isPalindrome(-121) == False:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')"
+    }
+  },
+  {
+    "slug": "valid-parentheses",
+    "title": "Operation: Valid Parentheses",
+    "difficulty": "Easy",
+    "description": "Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if open brackets are closed by the same type of brackets, and in the correct order.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <string>\n#include <stack>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isValid(string s) {\n        // Your optimized logic here\n        return false;\n    }\n};",
+      "python": "class Solution:\n    def isValid(self, s: str) -> bool:\n        # Your optimized logic here\n        pass",
+      "java": "import java.util.Stack;\nclass Solution {\n    public boolean isValid(String s) {\n        // Your optimized logic here\n        return false;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.isValid(\"()[]{}\") == true && sol.isValid(\"(]\") == false && sol.isValid(\"([)]\") == false) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.isValid(\"()[]{}\") == True and sol.isValid(\"(]\") == False and sol.isValid(\"([)]\") == False:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": ""
+    }
+  },
+  {
+    "slug": "maximum-subarray",
+    "title": "Operation: Maximum Subarray",
+    "difficulty": "Medium",
+    "description": "Given an integer array `nums`, find the subarray with the largest sum, and return its sum. (Hint: Look into Kadane's Algorithm to achieve O(n) time complexity).",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxSubArray(vector<int>& nums) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def maxSubArray(self, nums: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int maxSubArray(int[] nums) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {-2,1,-3,4,-1,2,1,-5,4};\n    vector<int> n2 = {5,4,-1,7,8};\n    if (sol.maxSubArray(n1) == 6 && sol.maxSubArray(n2) == 23) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]) == 6 and sol.maxSubArray([5,4,-1,7,8]) == 23:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": ""
+    }
+  },
+  {
+    "slug": "contains-duplicate",
+    "title": "Operation: Contains Duplicate",
+    "difficulty": "Easy",
+    "description": "Given an integer array `nums`, return true if any value appears at least twice in the array, and return false if every element is distinct.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <unordered_set>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool containsDuplicate(vector<int>& nums) {\n        // Your optimized logic here\n        return false;\n    }\n};",
+      "python": "class Solution:\n    def containsDuplicate(self, nums: list[int]) -> bool:\n        # Your optimized logic here\n        pass",
+      "java": "import java.util.HashSet;\nclass Solution {\n    public boolean containsDuplicate(int[] nums) {\n        // Your optimized logic here\n        return false;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {1,2,3,1};\n    vector<int> n2 = {1,2,3,4};\n    if (sol.containsDuplicate(n1) == true && sol.containsDuplicate(n2) == false) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.containsDuplicate([1,2,3,1]) == True and sol.containsDuplicate([1,2,3,4]) == False:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": ""
+    }
+  },
+  {
+    "slug": "best-time-to-buy-and-sell-stock",
+    "title": "Operation: Buy and Sell Stock",
+    "difficulty": "Easy",
+    "description": "You are given an array `prices` where `prices[i]` is the price of a given stock on the `i`th day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxProfit(vector<int>& prices) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def maxProfit(self, prices: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int maxProfit(int[] prices) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {7,1,5,3,6,4};\n    vector<int> n2 = {7,6,4,3,1};\n    if (sol.maxProfit(n1) == 5 && sol.maxProfit(n2) == 0) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.maxProfit([7,1,5,3,6,4]) == 5 and sol.maxProfit([7,6,4,3,1]) == 0:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": ""
+    }
+  },
+  {
+    "slug": "merge-intervals",
+    "title": "Operation: Merge Intervals",
+    "difficulty": "Medium",
+    "description": "Given an array of `intervals` where `intervals[i] = [start_i, end_i]`, merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> merge(vector<vector<int>>& intervals) {\n        // Your optimized logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def merge(self, intervals: list[list[int]]) -> list[list[int]]:\n        # Your optimized logic here\n        pass",
+      "java": "import java.util.Arrays;\nimport java.util.List;\nclass Solution {\n    public int[][] merge(int[][] intervals) {\n        // Your optimized logic here\n        return new int[][]{};\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<int>> n1 = {{1,3},{2,6},{8,10},{15,18}};\n    vector<vector<int>> res = sol.merge(n1);\n    if (res.size() == 3 && res[0][1] == 6 && res[2][0] == 15) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    res = sol.merge([[1,3],[2,6],[8,10],[15,18]])\n    if len(res) == 3 and res[0][1] == 6 and res[2][0] == 15:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": ""
+    }
+  },
+  {
+    "slug": "merge-intervals",
+    "title": "Operation: Merge Intervals",
+    "difficulty": "Medium",
+    "description": "Given an array of `intervals` where `intervals[i] = [start_i, end_i]`, merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> merge(vector<vector<int>>& intervals) {\n        // Your optimized logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def merge(self, intervals: list[list[int]]) -> list[list[int]]:\n        # Your optimized logic here\n        pass",
+      "java": "import java.util.Arrays;\nimport java.util.List;\nimport java.util.ArrayList;\nclass Solution {\n    public int[][] merge(int[][] intervals) {\n        // Your optimized logic here\n        return new int[][]{};\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<int>> n1 = {{1,3},{2,6},{8,10},{15,18}};\n    vector<vector<int>> res = sol.merge(n1);\n    if (res.size() == 3 && res[0][1] == 6 && res[2][0] == 15) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    res = sol.merge([[1,3],[2,6],[8,10],[15,18]])\n    if len(res) == 3 and res[0][1] == 6 and res[2][0] == 15:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[][] res = sol.merge(new int[][]{{1,3},{2,6},{8,10},{15,18}});\n        if (res.length == 3 && res[0][1] == 6 && res[2][0] == 15) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "climbing-stairs",
+    "title": "Operation: Climbing Stairs",
+    "difficulty": "Easy",
+    "description": "You are climbing a staircase. It takes `n` steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "boilerplates": {
+      "cpp": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int climbStairs(int n) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def climbStairs(self, n: int) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int climbStairs(int n) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.climbStairs(2) == 2 && sol.climbStairs(3) == 3 && sol.climbStairs(5) == 8) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.climbStairs(2) == 2 and sol.climbStairs(3) == 3 and sol.climbStairs(5) == 8:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.climbStairs(2) == 2 && sol.climbStairs(3) == 3 && sol.climbStairs(5) == 8) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "missing-number",
+    "title": "Operation: Missing Number",
+    "difficulty": "Easy",
+    "description": "Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, return the only number in the range that is missing from the array.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int missingNumber(vector<int>& nums) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def missingNumber(self, nums: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int missingNumber(int[] nums) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {3,0,1};\n    vector<int> n2 = {9,6,4,2,3,5,7,0,1};\n    if (sol.missingNumber(n1) == 2 && sol.missingNumber(n2) == 8) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.missingNumber([3,0,1]) == 2 and sol.missingNumber([9,6,4,2,3,5,7,0,1]) == 8:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.missingNumber(new int[]{3,0,1}) == 2 && sol.missingNumber(new int[]{9,6,4,2,3,5,7,0,1}) == 8) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "product-of-array-except-self",
+    "title": "Operation: Product of Array Except Self",
+    "difficulty": "Medium",
+    "description": "Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all the elements of `nums` except `nums[i]`. You must write an algorithm that runs in O(n) time and without using the division operation.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> productExceptSelf(vector<int>& nums) {\n        // Your optimized logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def productExceptSelf(self, nums: list[int]) -> list[int]:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int[] productExceptSelf(int[] nums) {\n        // Your optimized logic here\n        return new int[]{};\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {1,2,3,4};\n    vector<int> res1 = sol.productExceptSelf(n1);\n    vector<int> n2 = {-1,1,0,-3,3};\n    vector<int> res2 = sol.productExceptSelf(n2);\n    if (res1.size() == 4 && res1[0] == 24 && res1[3] == 6 && res2[2] == 9) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    res1 = sol.productExceptSelf([1,2,3,4])\n    res2 = sol.productExceptSelf([-1,1,0,-3,3])\n    if res1 == [24,12,8,6] and res2 == [0,0,9,0,0]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[] res1 = sol.productExceptSelf(new int[]{1,2,3,4});\n        int[] res2 = sol.productExceptSelf(new int[]{-1,1,0,-3,3});\n        if (Arrays.equals(res1, new int[]{24,12,8,6}) && Arrays.equals(res2, new int[]{0,0,9,0,0})) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "reverse-string",
+    "title": "Operation: Reverse String",
+    "difficulty": "Easy",
+    "description": "Write a function that reverses a string. The input string is given as an array of characters `s`. You must do this by modifying the input array in-place with O(1) extra memory.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void reverseString(vector<char>& s) {\n        // Your optimized logic here\n        \n    }\n};",
+      "python": "class Solution:\n    def reverseString(self, s: list[str]) -> None:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public void reverseString(char[] s) {\n        // Your optimized logic here\n        \n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<char> s1 = {'h','e','l','l','o'};\n    sol.reverseString(s1);\n    vector<char> s2 = {'H','a','n','n','a','h'};\n    sol.reverseString(s2);\n    if (s1[0] == 'o' && s1[4] == 'h' && s2[0] == 'h' && s2[5] == 'H') {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    s1 = ['h','e','l','l','o']\n    sol.reverseString(s1)\n    s2 = ['H','a','n','n','a','h']\n    sol.reverseString(s2)\n    if s1 == ['o','l','l','e','h'] and s2 == ['h','a','n','n','a','H']:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        char[] s1 = new char[]{'h','e','l','l','o'};\n        sol.reverseString(s1);\n        char[] s2 = new char[]{'H','a','n','n','a','h'};\n        sol.reverseString(s2);\n        if (Arrays.equals(s1, new char[]{'o','l','l','e','h'}) && Arrays.equals(s2, new char[]{'h','a','n','n','a','H'})) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "reverse-integer",
+    "title": "Operation: Reverse Integer",
+    "difficulty": "Medium",
+    "description": "Given a signed 32-bit integer `x`, return `x` with its digits reversed. If reversing `x` causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int reverse(int x) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def reverse(self, x: int) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int reverse(int x) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.reverse(123) == 321 && sol.reverse(-123) == -321 && sol.reverse(120) == 21) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.reverse(123) == 321 and sol.reverse(-123) == -321 and sol.reverse(120) == 21:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.reverse(123) == 321 && sol.reverse(-123) == -321 && sol.reverse(120) == 21) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "find-minimum-in-rotated-sorted-array",
+    "title": "Operation: Find Minimum in Rotated Array",
+    "difficulty": "Medium",
+    "description": "Suppose an array of length `n` sorted in ascending order is rotated between 1 and `n` times. Given the sorted rotated array `nums` of unique elements, return the minimum element of this array. You must write an algorithm that runs in O(log n) time.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findMin(vector<int>& nums) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def findMin(self, nums: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int findMin(int[] nums) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {3,4,5,1,2};\n    vector<int> n2 = {4,5,6,7,0,1,2};\n    if (sol.findMin(n1) == 1 && sol.findMin(n2) == 0) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.findMin([3,4,5,1,2]) == 1 and sol.findMin([4,5,6,7,0,1,2]) == 0:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.findMin(new int[]{3,4,5,1,2}) == 1 && sol.findMin(new int[]{4,5,6,7,0,1,2}) == 0) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "move-zeroes",
+    "title": "Operation: Move Zeroes",
+    "difficulty": "Easy",
+    "description": "Given an integer array `nums`, move all 0's to the end of it while maintaining the relative order of the non-zero elements. Note that you must do this in-place without making a copy of the array.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void moveZeroes(vector<int>& nums) {\n        // Your optimized logic here\n        \n    }\n};",
+      "python": "class Solution:\n    def moveZeroes(self, nums: list[int]) -> None:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public void moveZeroes(int[] nums) {\n        // Your optimized logic here\n        \n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {0,1,0,3,12};\n    sol.moveZeroes(n1);\n    vector<int> n2 = {0};\n    sol.moveZeroes(n2);\n    if (n1.size() == 5 && n1[0] == 1 && n1[3] == 0 && n2.size() == 1 && n2[0] == 0) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    n1 = [0,1,0,3,12]\n    sol.moveZeroes(n1)\n    n2 = [0]\n    sol.moveZeroes(n2)\n    if n1 == [1,3,12,0,0] and n2 == [0]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[] n1 = new int[]{0,1,0,3,12};\n        sol.moveZeroes(n1);\n        int[] n2 = new int[]{0};\n        sol.moveZeroes(n2);\n        if (Arrays.equals(n1, new int[]{1,3,12,0,0}) && Arrays.equals(n2, new int[]{0})) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "single-number",
+    "title": "Operation: Single Number",
+    "difficulty": "Easy",
+    "description": "Given a non-empty array of integers `nums`, every element appears twice except for one. Find that single one. You must implement a solution with a linear runtime complexity and use only constant extra space.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def singleNumber(self, nums: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int singleNumber(int[] nums) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {2,2,1};\n    vector<int> n2 = {4,1,2,1,2};\n    if (sol.singleNumber(n1) == 1 && sol.singleNumber(n2) == 4) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.singleNumber([2,2,1]) == 1 and sol.singleNumber([4,1,2,1,2]) == 4:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.singleNumber(new int[]{2,2,1}) == 1 && sol.singleNumber(new int[]{4,1,2,1,2}) == 4) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "squares-of-a-sorted-array",
+    "title": "Operation: Squares of a Sorted Array",
+    "difficulty": "Easy",
+    "description": "Given an integer array `nums` sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> sortedSquares(vector<int>& nums) {\n        // Your optimized logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def sortedSquares(self, nums: list[int]) -> list[int]:\n        # Your optimized logic here\n        pass",
+      "java": "import java.util.Arrays;\nclass Solution {\n    public int[] sortedSquares(int[] nums) {\n        // Your optimized logic here\n        return new int[]{};\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {-4,-1,0,3,10};\n    vector<int> res1 = sol.sortedSquares(n1);\n    vector<int> n2 = {-7,-3,2,3,11};\n    vector<int> res2 = sol.sortedSquares(n2);\n    if (res1.size() == 5 && res1[0] == 0 && res1[4] == 100 && res2[0] == 4 && res2[4] == 121) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.sortedSquares([-4,-1,0,3,10]) == [0,1,9,16,100] and sol.sortedSquares([-7,-3,2,3,11]) == [4,9,9,49,121]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[] res1 = sol.sortedSquares(new int[]{-4,-1,0,3,10});\n        int[] res2 = sol.sortedSquares(new int[]{-7,-3,2,3,11});\n        if (Arrays.equals(res1, new int[]{0,1,9,16,100}) && Arrays.equals(res2, new int[]{4,9,9,49,121})) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "two-sum-ii",
+    "title": "Operation: Two Sum II (Sorted)",
+    "difficulty": "Medium",
+    "description": "Given a 1-indexed array of integers `numbers` that is already sorted in non-decreasing order, find two numbers such that they add up to a specific `target` number. Return the indices of the two numbers, 1-indexed. You must use only constant extra space.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> twoSum(vector<int>& numbers, int target) {\n        // Your optimized logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def twoSum(self, numbers: list[int], target: int) -> list[int]:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int[] twoSum(int[] numbers, int target) {\n        // Your optimized logic here\n        return new int[]{};\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {2,7,11,15};\n    vector<int> r1 = sol.twoSum(n1, 9);\n    vector<int> n2 = {2,3,4};\n    vector<int> r2 = sol.twoSum(n2, 6);\n    if (r1.size() == 2 && r1[0] == 1 && r1[1] == 2 && r2.size() == 2 && r2[0] == 1 && r2[1] == 3) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.twoSum([2,7,11,15], 9) == [1,2] and sol.twoSum([2,3,4], 6) == [1,3]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[] r1 = sol.twoSum(new int[]{2,7,11,15}, 9);\n        int[] r2 = sol.twoSum(new int[]{2,3,4}, 6);\n        if (Arrays.equals(r1, new int[]{1,2}) && Arrays.equals(r2, new int[]{1,3})) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "majority-element",
+    "title": "Operation: Majority Element",
+    "difficulty": "Easy",
+    "description": "Given an array `nums` of size `n`, return the majority element. The majority element is the element that appears more than `⌊n / 2⌋` times. You may assume that the majority element always exists in the array.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int majorityElement(vector<int>& nums) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def majorityElement(self, nums: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int majorityElement(int[] nums) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {3,2,3};\n    vector<int> n2 = {2,2,1,1,1,2,2};\n    if (sol.majorityElement(n1) == 3 && sol.majorityElement(n2) == 2) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.majorityElement([3,2,3]) == 3 and sol.majorityElement([2,2,1,1,1,2,2]) == 2:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.majorityElement(new int[]{3,2,3}) == 3 && sol.majorityElement(new int[]{2,2,1,1,1,2,2}) == 2) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "fibonacci-number",
+    "title": "Operation: Fibonacci Number",
+    "difficulty": "Easy",
+    "description": "The Fibonacci numbers, commonly denoted `F(n)` form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from `0` and `1`. Given `n`, calculate `F(n)`.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int fib(int n) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def fib(self, n: int) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int fib(int n) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.fib(2) == 1 && sol.fib(3) == 2 && sol.fib(4) == 3) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.fib(2) == 1 and sol.fib(3) == 2 and sol.fib(4) == 3:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.fib(2) == 1 && sol.fib(3) == 2 && sol.fib(4) == 3) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "container-with-most-water",
+    "title": "Operation: Container With Most Water",
+    "difficulty": "Medium",
+    "description": "You are given an integer array `height` of length `n`. There are `n` vertical lines drawn such that the two endpoints of the `i`th line are `(i, 0)` and `(i, height[i])`. Find two lines that together with the x-axis form a container, such that the container contains the most water.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxArea(vector<int>& height) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def maxArea(self, height: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int maxArea(int[] height) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {1,8,6,2,5,4,8,3,7};\n    vector<int> n2 = {1,1};\n    if (sol.maxArea(n1) == 49 && sol.maxArea(n2) == 1) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.maxArea([1,8,6,2,5,4,8,3,7]) == 49 and sol.maxArea([1,1]) == 1:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.maxArea(new int[]{1,8,6,2,5,4,8,3,7}) == 49 && sol.maxArea(new int[]{1,1}) == 1) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "remove-duplicates-from-sorted-array",
+    "title": "Operation: Remove Duplicates",
+    "difficulty": "Easy",
+    "description": "Given an integer array `nums` sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in `nums`.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int removeDuplicates(vector<int>& nums) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def removeDuplicates(self, nums: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int removeDuplicates(int[] nums) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {1,1,2};\n    int k1 = sol.removeDuplicates(n1);\n    vector<int> n2 = {0,0,1,1,1,2,2,3,3,4};\n    int k2 = sol.removeDuplicates(n2);\n    if (k1 == 2 && k2 == 5) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.removeDuplicates([1,1,2]) == 2 and sol.removeDuplicates([0,0,1,1,1,2,2,3,3,4]) == 5:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.removeDuplicates(new int[]{1,1,2}) == 2 && sol.removeDuplicates(new int[]{0,0,1,1,1,2,2,3,3,4}) == 5) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "search-in-rotated-sorted-array",
+    "title": "Operation: Search Rotated Array",
+    "difficulty": "Medium",
+    "description": "There is an integer array `nums` sorted in ascending order (with distinct values). Prior to being passed to your function, `nums` is possibly rotated at an unknown pivot index. Given the array `nums` after the possible rotation and an integer `target`, return the index of `target` if it is in `nums`, or `-1` if it is not in `nums`. You must write an algorithm with O(log n) runtime complexity.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int search(vector<int>& nums, int target) {\n        // Your optimized logic here\n        return -1;\n    }\n};",
+      "python": "class Solution:\n    def search(self, nums: list[int], target: int) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int search(int[] nums, int target) {\n        // Your optimized logic here\n        return -1;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {4,5,6,7,0,1,2};\n    if (sol.search(n1, 0) == 4 && sol.search(n1, 3) == -1) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.search([4,5,6,7,0,1,2], 0) == 4 and sol.search([4,5,6,7,0,1,2], 3) == -1:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.search(new int[]{4,5,6,7,0,1,2}, 0) == 4 && sol.search(new int[]{4,5,6,7,0,1,2}, 3) == -1) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "search-insert-position",
+    "title": "Operation: Search Insert",
+    "difficulty": "Easy",
+    "description": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order. You must write an algorithm with O(log n) runtime complexity.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int searchInsert(vector<int>& nums, int target) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def searchInsert(self, nums: list[int], target: int) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int searchInsert(int[] nums, int target) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {1,3,5,6};\n    if (sol.searchInsert(n1, 5) == 2 && sol.searchInsert(n1, 2) == 1 && sol.searchInsert(n1, 7) == 4) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.searchInsert([1,3,5,6], 5) == 2 and sol.searchInsert([1,3,5,6], 2) == 1 and sol.searchInsert([1,3,5,6], 7) == 4:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.searchInsert(new int[]{1,3,5,6}, 5) == 2 && sol.searchInsert(new int[]{1,3,5,6}, 2) == 1 && sol.searchInsert(new int[]{1,3,5,6}, 7) == 4) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "longest-consecutive-sequence",
+    "title": "Operation: Longest Consecutive Sequence",
+    "difficulty": "Medium",
+    "description": "Given an unsorted array of integers `nums`, return the length of the longest consecutive elements sequence. You must write an algorithm that runs in O(n) time.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <unordered_set>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestConsecutive(vector<int>& nums) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def longestConsecutive(self, nums: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "import java.util.HashSet;\nclass Solution {\n    public int longestConsecutive(int[] nums) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {100,4,200,1,3,2};\n    vector<int> n2 = {0,3,7,2,5,8,4,6,0,1};\n    if (sol.longestConsecutive(n1) == 4 && sol.longestConsecutive(n2) == 9) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.longestConsecutive([100,4,200,1,3,2]) == 4 and sol.longestConsecutive([0,3,7,2,5,8,4,6,0,1]) == 9:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.longestConsecutive(new int[]{100,4,200,1,3,2}) == 4 && sol.longestConsecutive(new int[]{0,3,7,2,5,8,4,6,0,1}) == 9) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "longest-substring-without-repeating-characters",
+    "title": "Operation: Longest Substring",
+    "difficulty": "Medium",
+    "description": "Given a string `s`, find the length of the longest substring without repeating characters.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <string>\n#include <unordered_set>\nusing namespace std;\n\nclass Solution {\npublic:\n    int lengthOfLongestSubstring(string s) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "import java.util.HashSet;\nclass Solution {\n    public int lengthOfLongestSubstring(String s) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.lengthOfLongestSubstring(\"abcabcbb\") == 3 && sol.lengthOfLongestSubstring(\"bbbbb\") == 1 && sol.lengthOfLongestSubstring(\"pwwkew\") == 3) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.lengthOfLongestSubstring('abcabcbb') == 3 and sol.lengthOfLongestSubstring('bbbbb') == 1 and sol.lengthOfLongestSubstring('pwwkew') == 3:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.lengthOfLongestSubstring(\"abcabcbb\") == 3 && sol.lengthOfLongestSubstring(\"bbbbb\") == 1 && sol.lengthOfLongestSubstring(\"pwwkew\") == 3) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "valid-palindrome",
+    "title": "Operation: Valid Palindrome",
+    "difficulty": "Easy",
+    "description": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Given a string `s`, return true if it is a palindrome, or false otherwise.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <string>\n#include <cctype>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPalindrome(string s) {\n        // Your optimized logic here\n        return false;\n    }\n};",
+      "python": "class Solution:\n    def isPalindrome(self, s: str) -> bool:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public boolean isPalindrome(String s) {\n        // Your optimized logic here\n        return false;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.isPalindrome(\"A man, a plan, a canal: Panama\") == true && sol.isPalindrome(\"race a car\") == false) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.isPalindrome('A man, a plan, a canal: Panama') == True and sol.isPalindrome('race a car') == False:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.isPalindrome(\"A man, a plan, a canal: Panama\") == true && sol.isPalindrome(\"race a car\") == false) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "edit-distance",
+    "title": "Operation: Edit Distance",
+    "difficulty": "Hard",
+    "description": "Given two strings `word1` and `word2`, return the minimum number of operations required to convert `word1` to `word2`. You have the following three operations permitted on a word: Insert a character, Delete a character, Replace a character. (Hint: This requires 2D Dynamic Programming).",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minDistance(string word1, string word2) {\n        // Your optimized DP logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def minDistance(self, word1: str, word2: str) -> int:\n        # Your optimized DP logic here\n        pass",
+      "java": "class Solution {\n    public int minDistance(String word1, String word2) {\n        // Your optimized DP logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.minDistance(\"horse\", \"ros\") == 3 && sol.minDistance(\"intention\", \"execution\") == 5) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.minDistance('horse', 'ros') == 3 and sol.minDistance('intention', 'execution') == 5:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.minDistance(\"horse\", \"ros\") == 3 && sol.minDistance(\"intention\", \"execution\") == 5) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "first-missing-positive",
+    "title": "Operation: First Missing Positive",
+    "difficulty": "Hard",
+    "description": "Given an unsorted integer array `nums`, return the smallest missing positive integer. You must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int firstMissingPositive(vector<int>& nums) {\n        // Your optimized logic here\n        return 1;\n    }\n};",
+      "python": "class Solution:\n    def firstMissingPositive(self, nums: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int firstMissingPositive(int[] nums) {\n        // Your optimized logic here\n        return 1;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {1,2,0};\n    vector<int> n2 = {3,4,-1,1};\n    vector<int> n3 = {7,8,9,11,12};\n    if (sol.firstMissingPositive(n1) == 3 && sol.firstMissingPositive(n2) == 2 && sol.firstMissingPositive(n3) == 1) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.firstMissingPositive([1,2,0]) == 3 and sol.firstMissingPositive([3,4,-1,1]) == 2 and sol.firstMissingPositive([7,8,9,11,12]) == 1:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.firstMissingPositive(new int[]{1,2,0}) == 3 && sol.firstMissingPositive(new int[]{3,4,-1,1}) == 2 && sol.firstMissingPositive(new int[]{7,8,9,11,12}) == 1) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "coin-change",
+    "title": "Operation: Coin Change",
+    "difficulty": "Medium",
+    "description": "You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`. You may assume that you have an infinite number of each kind of coin.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int coinChange(vector<int>& coins, int amount) {\n        // Your optimized DP logic here\n        return -1;\n    }\n};",
+      "python": "class Solution:\n    def coinChange(self, coins: list[int], amount: int) -> int:\n        # Your optimized DP logic here\n        pass",
+      "java": "import java.util.Arrays;\nclass Solution {\n    public int coinChange(int[] coins, int amount) {\n        // Your optimized DP logic here\n        return -1;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> c1 = {1,2,5};\n    vector<int> c2 = {2};\n    if (sol.coinChange(c1, 11) == 3 && sol.coinChange(c2, 3) == -1) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.coinChange([1,2,5], 11) == 3 and sol.coinChange([2], 3) == -1:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.coinChange(new int[]{1,2,5}, 11) == 3 && sol.coinChange(new int[]{2}, 3) == -1) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "number-of-1-bits",
+    "title": "Operation: Number of 1 Bits",
+    "difficulty": "Easy",
+    "description": "Write a function that takes the binary representation of a positive integer and returns the number of set bits it has (also known as the Hamming weight).",
+    "boilerplates": {
+      "cpp": "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int hammingWeight(int n) {\n        // Your optimized bit manipulation here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def hammingWeight(self, n: int) -> int:\n        # Your optimized bit manipulation here\n        pass",
+      "java": "class Solution {\n    public int hammingWeight(int n) {\n        // Your optimized bit manipulation here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.hammingWeight(11) == 3 && sol.hammingWeight(128) == 1 && sol.hammingWeight(2147483645) == 30) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.hammingWeight(11) == 3 and sol.hammingWeight(128) == 1 and sol.hammingWeight(2147483645) == 30:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.hammingWeight(11) == 3 && sol.hammingWeight(128) == 1 && sol.hammingWeight(2147483645) == 30) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "word-break",
+    "title": "Operation: Word Break",
+    "difficulty": "Medium",
+    "description": "Given a string `s` and a dictionary of strings `wordDict`, return true if `s` can be segmented into a space-separated sequence of one or more dictionary words. Note that the same word in the dictionary may be reused multiple times in the segmentation.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool wordBreak(string s, vector<string>& wordDict) {\n        // Your optimized DP / Trie logic here\n        return false;\n    }\n};",
+      "python": "class Solution:\n    def wordBreak(self, s: str, wordDict: list[str]) -> bool:\n        # Your optimized DP / Trie logic here\n        pass",
+      "java": "import java.util.List;\nclass Solution {\n    public boolean wordBreak(String s, List<String> wordDict) {\n        // Your optimized DP / Trie logic here\n        return false;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<string> d1 = {\"leetcode\"};\n    vector<string> d2 = {\"apple\", \"pen\"};\n    vector<string> d3 = {\"cats\", \"dog\", \"sand\", \"and\", \"cat\"};\n    if (sol.wordBreak(\"leetcode\", d1) == true && sol.wordBreak(\"applepenapple\", d2) == true && sol.wordBreak(\"catsandog\", d3) == false) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.wordBreak('leetcode', ['leetcode']) == True and sol.wordBreak('applepenapple', ['apple', 'pen']) == True and sol.wordBreak('catsandog', ['cats', 'dog', 'sand', 'and', 'cat']) == False:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.wordBreak(\"leetcode\", Arrays.asList(\"leetcode\")) == true && sol.wordBreak(\"applepenapple\", Arrays.asList(\"apple\", \"pen\")) == true && sol.wordBreak(\"catsandog\", Arrays.asList(\"cats\", \"dog\", \"sand\", \"and\", \"cat\")) == false) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "spiral-matrix",
+    "title": "Operation: Spiral Matrix",
+    "difficulty": "Medium",
+    "description": "Given an `m x n` `matrix`, return all elements of the `matrix` in spiral order. (e.g., across the top, down the right side, backwards across the bottom, and up the left side).",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> spiralOrder(vector<vector<int>>& matrix) {\n        // Your optimized logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def spiralOrder(self, matrix: list[list[int]]) -> list[int]:\n        # Your optimized logic here\n        pass",
+      "java": "import java.util.List;\nimport java.util.ArrayList;\nclass Solution {\n    public List<Integer> spiralOrder(int[][] matrix) {\n        // Your optimized logic here\n        return new ArrayList<>();\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<int>> m1 = {{1,2,3},{4,5,6},{7,8,9}};\n    vector<int> res1 = sol.spiralOrder(m1);\n    if (res1.size() == 9 && res1[0] == 1 && res1[3] == 6 && res1[8] == 5) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.spiralOrder([[1,2,3],[4,5,6],[7,8,9]]) == [1,2,3,6,9,8,7,4,5]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\nimport java.util.List;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        List<Integer> res1 = sol.spiralOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}});\n        if (res1.equals(Arrays.asList(1,2,3,6,9,8,7,4,5))) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "jump-game",
+    "title": "Operation: Jump Game",
+    "difficulty": "Medium",
+    "description": "You are given an integer array `nums`. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. Return true if you can reach the last index, or false otherwise. (Hint: Think Greedy).",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool canJump(vector<int>& nums) {\n        // Your optimized Greedy logic here\n        return false;\n    }\n};",
+      "python": "class Solution:\n    def canJump(self, nums: list[int]) -> bool:\n        # Your optimized Greedy logic here\n        pass",
+      "java": "class Solution {\n    public boolean canJump(int[] nums) {\n        // Your optimized Greedy logic here\n        return false;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {2,3,1,1,4};\n    vector<int> n2 = {3,2,1,0,4};\n    if (sol.canJump(n1) == true && sol.canJump(n2) == false) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.canJump([2,3,1,1,4]) == True and sol.canJump([3,2,1,0,4]) == False:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.canJump(new int[]{2,3,1,1,4}) == true && sol.canJump(new int[]{3,2,1,0,4}) == false) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "trapping-rain-water",
+    "title": "Operation: Trapping Rain Water",
+    "difficulty": "Hard",
+    "description": "Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int trap(vector<int>& height) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def trap(self, height: list[int]) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int trap(int[] height) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {0,1,0,2,1,0,1,3,2,1,2,1};\n    vector<int> n2 = {4,2,0,3,2,5};\n    if (sol.trap(n1) == 6 && sol.trap(n2) == 9) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.trap([0,1,0,2,1,0,1,3,2,1,2,1]) == 6 and sol.trap([4,2,0,3,2,5]) == 9:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}) == 6 && sol.trap(new int[]{4,2,0,3,2,5}) == 9) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "plus-one",
+    "title": "Operation: Plus One",
+    "difficulty": "Easy",
+    "description": "You are given a large integer represented as an integer array `digits`, where each `digits[i]` is the `i`th digit of the integer. Increment the large integer by one and return the resulting array of digits.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> plusOne(vector<int>& digits) {\n        // Your optimized logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def plusOne(self, digits: list[int]) -> list[int]:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int[] plusOne(int[] digits) {\n        // Your optimized logic here\n        return new int[]{};\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {1,2,3};\n    vector<int> res1 = sol.plusOne(n1);\n    vector<int> n2 = {9};\n    vector<int> res2 = sol.plusOne(n2);\n    if (res1.size() == 3 && res1[2] == 4 && res2.size() == 2 && res2[0] == 1 && res2[1] == 0) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.plusOne([1,2,3]) == [1,2,4] and sol.plusOne([9]) == [1,0]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[] res1 = sol.plusOne(new int[]{1,2,3});\n        int[] res2 = sol.plusOne(new int[]{9});\n        if (Arrays.equals(res1, new int[]{1,2,4}) && Arrays.equals(res2, new int[]{1,0})) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "set-matrix-zeroes",
+    "title": "Operation: Set Matrix Zeroes",
+    "difficulty": "Medium",
+    "description": "Given an `m x n` integer matrix `matrix`, if an element is `0`, set its entire row and column to `0`'s. You must do it in place.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void setZeroes(vector<vector<int>>& matrix) {\n        // Your optimized logic here\n        \n    }\n};",
+      "python": "class Solution:\n    def setZeroes(self, matrix: list[list[int]]) -> None:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public void setZeroes(int[][] matrix) {\n        // Your optimized logic here\n        \n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<int>> m1 = {{1,1,1},{1,0,1},{1,1,1}};\n    sol.setZeroes(m1);\n    if (m1[1][0] == 0 && m1[1][2] == 0 && m1[0][1] == 0) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    m1 = [[1,1,1],[1,0,1],[1,1,1]]\n    sol.setZeroes(m1)\n    if m1 == [[1,0,1],[0,0,0],[1,0,1]]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[][] m1 = new int[][]{{1,1,1},{1,0,1},{1,1,1}};\n        sol.setZeroes(m1);\n        int[][] expected = new int[][]{{1,0,1},{0,0,0},{1,0,1}};\n        if (Arrays.deepEquals(m1, expected)) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "merge-sorted-array",
+    "title": "Operation: Merge Sorted Array",
+    "difficulty": "Easy",
+    "description": "You are given two integer arrays `nums1` and `nums2`, sorted in non-decreasing order, and two integers `m` and `n`, representing the number of elements in `nums1` and `nums2` respectively. Merge `nums2` into `nums1` as one sorted array. The final sorted array should not be returned by the function, but instead be stored inside the array `nums1`.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {\n        // Your optimized logic here\n        \n    }\n};",
+      "python": "class Solution:\n    def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public void merge(int[] nums1, int m, int[] nums2, int n) {\n        // Your optimized logic here\n        \n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {1,2,3,0,0,0};\n    vector<int> n2 = {2,5,6};\n    sol.merge(n1, 3, n2, 3);\n    if (n1.size() == 6 && n1[0] == 1 && n1[2] == 2 && n1[5] == 6) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    n1 = [1,2,3,0,0,0]\n    n2 = [2,5,6]\n    sol.merge(n1, 3, n2, 3)\n    if n1 == [1,2,2,3,5,6]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[] n1 = new int[]{1,2,3,0,0,0};\n        int[] n2 = new int[]{2,5,6};\n        sol.merge(n1, 3, n2, 3);\n        if (Arrays.equals(n1, new int[]{1,2,2,3,5,6})) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "rotate-array",
+    "title": "Operation: Rotate Array",
+    "difficulty": "Medium",
+    "description": "Given an integer array `nums`, rotate the array to the right by `k` steps, where `k` is non-negative. Try to come up with as many solutions as you can. There are at least three different ways to solve this problem. Could you do it in-place with O(1) extra space?",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    void rotate(vector<int>& nums, int k) {\n        // Your optimized logic here\n        \n    }\n};",
+      "python": "class Solution:\n    def rotate(self, nums: list[int], k: int) -> None:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public void rotate(int[] nums, int k) {\n        // Your optimized logic here\n        \n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {1,2,3,4,5,6,7};\n    sol.rotate(n1, 3);\n    if (n1.size() == 7 && n1[0] == 5 && n1[3] == 1 && n1[6] == 4) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    n1 = [1,2,3,4,5,6,7]\n    sol.rotate(n1, 3)\n    if n1 == [5,6,7,1,2,3,4]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[] n1 = new int[]{1,2,3,4,5,6,7};\n        sol.rotate(n1, 3);\n        if (Arrays.equals(n1, new int[]{5,6,7,1,2,3,4})) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "find-first-and-last-position-of-element-in-sorted-array",
+    "title": "Operation: First and Last Position",
+    "difficulty": "Medium",
+    "description": "Given an array of integers `nums` sorted in non-decreasing order, find the starting and ending position of a given `target` value. If target is not found in the array, return `[-1, -1]`. You must write an algorithm with O(log n) runtime complexity.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> searchRange(vector<int>& nums, int target) {\n        // Your optimized logic here\n        return {-1, -1};\n    }\n};",
+      "python": "class Solution:\n    def searchRange(self, nums: list[int], target: int) -> list[int]:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int[] searchRange(int[] nums, int target) {\n        // Your optimized logic here\n        return new int[]{-1, -1};\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<int> n1 = {5,7,7,8,8,10};\n    vector<int> r1 = sol.searchRange(n1, 8);\n    vector<int> r2 = sol.searchRange(n1, 6);\n    if (r1.size() == 2 && r1[0] == 3 && r1[1] == 4 && r2[0] == -1 && r2[1] == -1) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.searchRange([5,7,7,8,8,10], 8) == [3,4] and sol.searchRange([5,7,7,8,8,10], 6) == [-1,-1]:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.Arrays;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[] r1 = sol.searchRange(new int[]{5,7,7,8,8,10}, 8);\n        int[] r2 = sol.searchRange(new int[]{5,7,7,8,8,10}, 6);\n        if (Arrays.equals(r1, new int[]{3,4}) && Arrays.equals(r2, new int[]{-1,-1})) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "powx-n",
+    "title": "Operation: Pow(x, n)",
+    "difficulty": "Medium",
+    "description": "Implement `pow(x, n)`, which calculates `x` raised to the power `n` (i.e., x^n). You must handle edge cases like negative exponents.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nclass Solution {\npublic:\n    double myPow(double x, int n) {\n        // Your optimized logic here\n        return 0.0;\n    }\n};",
+      "python": "class Solution:\n    def myPow(self, x: float, n: int) -> float:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public double myPow(double x, int n) {\n        // Your optimized logic here\n        return 0.0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (abs(sol.myPow(2.0, 10) - 1024.0) < 0.001 && abs(sol.myPow(2.0, -2) - 0.25) < 0.001) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if abs(sol.myPow(2.0, 10) - 1024.0) < 0.001 and abs(sol.myPow(2.0, -2) - 0.25) < 0.001:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (Math.abs(sol.myPow(2.0, 10) - 1024.0) < 0.001 && Math.abs(sol.myPow(2.0, -2) - 0.25) < 0.001) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "length-of-last-word",
+    "title": "Operation: Length of Last Word",
+    "difficulty": "Easy",
+    "description": "Given a string `s` consisting of words and spaces, return the length of the last word in the string. A word is a maximal substring consisting of non-space characters only.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    int lengthOfLastWord(string s) {\n        // Your optimized logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def lengthOfLastWord(self, s: str) -> int:\n        # Your optimized logic here\n        pass",
+      "java": "class Solution {\n    public int lengthOfLastWord(String s) {\n        // Your optimized logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    if (sol.lengthOfLastWord(\"Hello World\") == 5 && sol.lengthOfLastWord(\"   fly me   to   the moon  \") == 4) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.lengthOfLastWord('Hello World') == 5 and sol.lengthOfLastWord('   fly me   to   the moon  ') == 4:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.lengthOfLastWord(\"Hello World\") == 5 && sol.lengthOfLastWord(\"   fly me   to   the moon  \") == 4) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "number-of-islands",
+    "title": "Operation: Number of Islands",
+    "difficulty": "Medium",
+    "description": "Given an `m x n` 2D binary grid `grid` which represents a map of '1's (land) and '0's (water), return the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int numIslands(vector<vector<char>>& grid) {\n        // Your optimized DFS/BFS logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def numIslands(self, grid: list[list[str]]) -> int:\n        # Your optimized DFS/BFS logic here\n        pass",
+      "java": "class Solution {\n    public int numIslands(char[][] grid) {\n        // Your optimized DFS/BFS logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<char>> g1 = {{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}};\n    if (sol.numIslands(g1) == 3) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    g1 = [['1','1','0','0','0'],['1','1','0','0','0'],['0','0','1','0','0'],['0','0','0','1','1']]\n    if sol.numIslands(g1) == 3:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        char[][] g1 = new char[][]{{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}};\n        if (sol.numIslands(g1) == 3) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "course-schedule",
+    "title": "Operation: Course Schedule",
+    "difficulty": "Medium",
+    "description": "There are a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`. You are given an array `prerequisites` where `prerequisites[i] = [a_i, b_i]` indicates that you must take course `b_i` first if you want to take course `a_i`. Return true if you can finish all courses. Otherwise, return false. (Hint: Detect cycles in a Directed Graph).",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {\n        // Your optimized Topological Sort / DFS logic here\n        return false;\n    }\n};",
+      "python": "class Solution:\n    def canFinish(self, numCourses: int, prerequisites: list[list[int]]) -> bool:\n        # Your optimized Topological Sort / DFS logic here\n        pass",
+      "java": "class Solution {\n    public boolean canFinish(int numCourses, int[][] prerequisites) {\n        // Your optimized Topological Sort / DFS logic here\n        return false;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<int>> p1 = {{1,0}};\n    vector<vector<int>> p2 = {{1,0},{0,1}};\n    if (sol.canFinish(2, p1) == true && sol.canFinish(2, p2) == false) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.canFinish(2, [[1,0]]) == True and sol.canFinish(2, [[1,0],[0,1]]) == False:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.canFinish(2, new int[][]{{1,0}}) == true && sol.canFinish(2, new int[][]{{1,0},{0,1}}) == false) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "max-area-of-island",
+    "title": "Operation: Max Area of Island",
+    "difficulty": "Medium",
+    "description": "You are given an `m x n` binary matrix `grid`. An island is a group of `1`'s (representing land) connected 4-directionally (horizontal or vertical). You may assume all four edges of the grid are surrounded by water. The area of an island is the number of cells with a value `1` in the island. Return the maximum area of an island in `grid`. If there is no island, return `0`.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxAreaOfIsland(vector<vector<int>>& grid) {\n        // Your optimized DFS/BFS logic here\n        return 0;\n    }\n};",
+      "python": "class Solution:\n    def maxAreaOfIsland(self, grid: list[list[int]]) -> int:\n        # Your optimized DFS/BFS logic here\n        pass",
+      "java": "class Solution {\n    public int maxAreaOfIsland(int[][] grid) {\n        // Your optimized DFS/BFS logic here\n        return 0;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<int>> g1 = {{0,0,1,0,0},{0,1,1,1,0},{0,0,1,0,0}};\n    vector<vector<int>> g2 = {{0,0,0,0,0}};\n    if (sol.maxAreaOfIsland(g1) == 5 && sol.maxAreaOfIsland(g2) == 0) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.maxAreaOfIsland([[0,0,1,0,0],[0,1,1,1,0],[0,0,1,0,0]]) == 5 and sol.maxAreaOfIsland([[0,0,0,0,0]]) == 0:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[][] g1 = new int[][]{{0,0,1,0,0},{0,1,1,1,0},{0,0,1,0,0}};\n        int[][] g2 = new int[][]{{0,0,0,0,0}};\n        if (sol.maxAreaOfIsland(g1) == 5 && sol.maxAreaOfIsland(g2) == 0) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "find-the-town-judge",
+    "title": "Operation: Find the Town Judge",
+    "difficulty": "Easy",
+    "description": "In a town, there are `n` people labeled from `1` to `n`. There is a rumor that one of these people is secretly the town judge. If the town judge exists, then: 1. The town judge trusts nobody. 2. Everybody (except for the town judge) trusts the town judge. You are given an array `trust` where `trust[i] = [a_i, b_i]` representing that the person labeled `a_i` trusts the person labeled `b_i`. Return the label of the town judge if they exist and can be identified, or return `-1`.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findJudge(int n, vector<vector<int>>& trust) {\n        // Your optimized graph degree logic here\n        return -1;\n    }\n};",
+      "python": "class Solution:\n    def findJudge(self, n: int, trust: list[list[int]]) -> int:\n        # Your optimized graph degree logic here\n        pass",
+      "java": "class Solution {\n    public int findJudge(int n, int[][] trust) {\n        // Your optimized graph degree logic here\n        return -1;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<int>> t1 = {{1,3},{2,3}};\n    vector<vector<int>> t2 = {{1,3},{2,3},{3,1}};\n    if (sol.findJudge(3, t1) == 3 && sol.findJudge(3, t2) == -1) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.findJudge(3, [[1,3],[2,3]]) == 3 and sol.findJudge(3, [[1,3],[2,3],[3,1]]) == -1:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        if (sol.findJudge(3, new int[][]{{1,3},{2,3}}) == 3 && sol.findJudge(3, new int[][]{{1,3},{2,3},{3,1}}) == -1) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "rotting-oranges",
+    "title": "Operation: Rotting Oranges",
+    "difficulty": "Medium",
+    "description": "You are given an `m x n` `grid` where each cell can have one of three values: `0` representing an empty cell, `1` representing a fresh orange, or `2` representing a rotten orange. Every minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten. Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return `-1`. (Hint: Multi-source BFS).",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\nclass Solution {\npublic:\n    int orangesRotting(vector<vector<int>>& grid) {\n        // Your optimized BFS logic here\n        return -1;\n    }\n};",
+      "python": "class Solution:\n    def orangesRotting(self, grid: list[list[int]]) -> int:\n        # Your optimized BFS logic here\n        pass",
+      "java": "import java.util.Queue;\nimport java.util.LinkedList;\nclass Solution {\n    public int orangesRotting(int[][] grid) {\n        // Your optimized BFS logic here\n        return -1;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<int>> g1 = {{2,1,1},{1,1,0},{0,1,1}};\n    vector<vector<int>> g2 = {{2,1,1},{0,1,1},{1,0,1}};\n    if (sol.orangesRotting(g1) == 4 && sol.orangesRotting(g2) == -1) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if sol.orangesRotting([[2,1,1],[1,1,0],[0,1,1]]) == 4 and sol.orangesRotting([[2,1,1],[0,1,1],[1,0,1]]) == -1:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        int[][] g1 = new int[][]{{2,1,1},{1,1,0},{0,1,1}};\n        int[][] g2 = new int[][]{{2,1,1},{0,1,1},{1,0,1}};\n        if (sol.orangesRotting(g1) == 4 && sol.orangesRotting(g2) == -1) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "n-queens",
+    "title": "Operation: N-Queens",
+    "difficulty": "Hard",
+    "description": "The n-queens puzzle is the problem of placing `n` queens on an `n x n` chessboard such that no two queens attack each other. Given an integer `n`, return all distinct solutions to the n-queens puzzle. You may return the answer in any order.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<string>> solveNQueens(int n) {\n        // Your optimized Backtracking logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def solveNQueens(self, n: int) -> list[list[str]]:\n        # Your optimized Backtracking logic here\n        pass",
+      "java": "import java.util.List;\nimport java.util.ArrayList;\nclass Solution {\n    public List<List<String>> solveNQueens(int n) {\n        // Your optimized Backtracking logic here\n        return new ArrayList<>();\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<string>> res1 = sol.solveNQueens(4);\n    vector<vector<string>> res2 = sol.solveNQueens(1);\n    if (res1.size() == 2 && res2.size() == 1) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if len(sol.solveNQueens(4)) == 2 and len(sol.solveNQueens(1)) == 1:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.List;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        List<List<String>> res1 = sol.solveNQueens(4);\n        List<List<String>> res2 = sol.solveNQueens(1);\n        if (res1.size() == 2 && res2.size() == 1) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "word-search",
+    "title": "Operation: Word Search",
+    "difficulty": "Medium",
+    "description": "Given an `m x n` grid of characters `board` and a string `word`, return `true` if `word` exists in the grid. The word can be constructed from letters of sequentially adjacent cells (horizontal or vertical). The same letter cell may not be used more than once.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool exist(vector<vector<char>>& board, string word) {\n        // Your optimized DFS Backtracking logic here\n        return false;\n    }\n};",
+      "python": "class Solution:\n    def exist(self, board: list[list[str]], word: str) -> bool:\n        # Your optimized DFS Backtracking logic here\n        pass",
+      "java": "class Solution {\n    public boolean exist(char[][] board, String word) {\n        // Your optimized DFS Backtracking logic here\n        return false;\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<vector<char>> b1 = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};\n    if (sol.exist(b1, \"ABCCED\") == true && sol.exist(b1, \"ABCB\") == false) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    b1 = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']]\n    if sol.exist(b1, 'ABCCED') == True and sol.exist(b1, 'ABCB') == False:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        char[][] b1 = new char[][]{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};\n        if (sol.exist(b1, \"ABCCED\") == true && sol.exist(b1, \"ABCB\") == false) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "generate-parentheses",
+    "title": "Operation: Generate Parentheses",
+    "difficulty": "Medium",
+    "description": "Given `n` pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> generateParenthesis(int n) {\n        // Your optimized Backtracking logic here\n        return {};\n    }\n};",
+      "python": "class Solution:\n    def generateParenthesis(self, n: int) -> list[str]:\n        # Your optimized Backtracking logic here\n        pass",
+      "java": "import java.util.List;\nimport java.util.ArrayList;\nclass Solution {\n    public List<String> generateParenthesis(int n) {\n        // Your optimized Backtracking logic here\n        return new ArrayList<>();\n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    Solution sol;\n    vector<string> r1 = sol.generateParenthesis(3);\n    vector<string> r2 = sol.generateParenthesis(1);\n    if (r1.size() == 5 && r2.size() == 1) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    sol = Solution()\n    if len(sol.generateParenthesis(3)) == 5 and len(sol.generateParenthesis(1)) == 1:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\nimport java.util.List;\npublic class Main {\n    public static void main(String[] args) {\n        Solution sol = new Solution();\n        List<String> r1 = sol.generateParenthesis(3);\n        List<String> r2 = sol.generateParenthesis(1);\n        if (r1.size() == 5 && r2.size() == 1) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  },
+  {
+    "slug": "lru-cache",
+    "title": "Operation: LRU Cache",
+    "difficulty": "Hard",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. Implement the `LRUCache` class with O(1) time complexity for both `get` and `put` operations. If a `put` causes the number of keys to exceed the `capacity`, evict the least recently used key.",
+    "boilerplates": {
+      "cpp": "#include <iostream>\n#include <unordered_map>\nusing namespace std;\n\nclass LRUCache {\npublic:\n    LRUCache(int capacity) {\n        // Your initialization here\n    }\n    \n    int get(int key) {\n        return -1;\n    }\n    \n    void put(int key, int value) {\n        \n    }\n};",
+      "python": "class LRUCache:\n    def __init__(self, capacity: int):\n        pass\n\n    def get(self, key: int) -> int:\n        return -1\n\n    def put(self, key: int, value: int) -> None:\n        pass",
+      "java": "import java.util.HashMap;\nclass LRUCache {\n    public LRUCache(int capacity) {\n        // Your initialization here\n    }\n    \n    public int get(int key) {\n        return -1;\n    }\n    \n    public void put(int key, int value) {\n        \n    }\n}"
+    },
+    "drivers": {
+      "cpp": "\nint main() {\n    LRUCache lru(2);\n    lru.put(1, 1);\n    lru.put(2, 2);\n    int v1 = lru.get(1);\n    lru.put(3, 3);\n    int v2 = lru.get(2);\n    lru.put(4, 4);\n    int v3 = lru.get(1);\n    int v4 = lru.get(3);\n    int v5 = lru.get(4);\n    if (v1 == 1 && v2 == -1 && v3 == -1 && v4 == 3 && v5 == 4) {\n        cout << \"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\" << endl;\n    } else {\n        cout << \"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\" << endl;\n    }\n    return 0;\n}",
+      "python": "\nif __name__ == '__main__':\n    lru = LRUCache(2)\n    lru.put(1, 1)\n    lru.put(2, 2)\n    v1 = lru.get(1)\n    lru.put(3, 3)\n    v2 = lru.get(2)\n    lru.put(4, 4)\n    v3 = lru.get(1)\n    v4 = lru.get(3)\n    v5 = lru.get(4)\n    if v1 == 1 and v2 == -1 and v3 == -1 and v4 == 3 and v5 == 4:\n        print('\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS')\n    else:\n        print('\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL')",
+      "java": "\npublic class Main {\n    public static void main(String[] args) {\n        LRUCache lru = new LRUCache(2);\n        lru.put(1, 1);\n        lru.put(2, 2);\n        int v1 = lru.get(1);\n        lru.put(3, 3);\n        int v2 = lru.get(2);\n        lru.put(4, 4);\n        int v3 = lru.get(1);\n        int v4 = lru.get(3);\n        int v5 = lru.get(4);\n        if (v1 == 1 && v2 == -1 && v3 == -1 && v4 == 3 && v5 == 4) {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_VERIFIED] :: TEST_PASS\");\n        } else {\n            System.out.println(\"\\n[SEGFAULT_EXECUTION_FAILED] :: TEST_FAIL\");\n        }\n    }\n}"
+    }
+  }
+]

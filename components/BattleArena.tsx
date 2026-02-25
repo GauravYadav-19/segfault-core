@@ -1,15 +1,9 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Editor from "@monaco-editor/react";
-import { Play, Loader2, Terminal, Swords, Radar, Target, AlertTriangle, Trophy, Skull, X, ShieldAlert, BrainCircuit } from "lucide-react";
+import { Play, Loader2, Terminal, Swords, Radar, Target, Trophy, Skull, X, ShieldAlert, BrainCircuit, Activity } from "lucide-react";
 import { createClient } from "../utils/supabase/client";
 import { Panel, Group, Separator } from "react-resizable-panels";
-
-const BOILERPLATES: Record<string, string> = {
-  cpp: `#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        // Write your optimized solution here\n        \n        return {};\n    }\n};\n\nint main() {\n    // Local testing\n    cout << "Ready for battle." << endl;\n    return 0;\n}`,
-  python: `class Solution:\n    def twoSum(self, nums: list[int], target: int) -> list[int]:\n        # Write your optimized solution here\n        pass\n\nif __name__ == "__main__":\n    print("Ready for battle.")`,
-  java: `class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        // Write your optimized solution here\n        \n        return new int[]{};\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Ready for battle.");\n    }\n}`
-};
 
 export default function BattleArena({ currentTheme }: { currentTheme: any }) {
   const supabase = createClient();
@@ -20,6 +14,9 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
   const [opponent, setOpponent] = useState<any>(null);
   const [matchId, setMatchId] = useState<string | null>(null);
   
+  // NEW: Dynamic Problem State
+  const [activeProblem, setActiveProblem] = useState<any>(null);
+
   const userIdRef = useRef(`hacker_${Math.floor(Math.random() * 10000)}`);
   const searchingRef = useRef(false);
   const combatChannelRef = useRef<any>(null); 
@@ -27,15 +24,15 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
   
   const [strikes, setStrikes] = useState(0);
   const [showWarning, setShowWarning] = useState(false);
-
-  // NEW: AI Mentor State
   const [mentorState, setMentorState] = useState<"idle" | "loading" | "visible">("idle");
   const [mentorData, setMentorData] = useState<{concept: string, advice: string} | null>(null);
 
   const [language, setLanguage] = useState("cpp");
   const [output, setOutput] = useState<string>("> System initialized. Awaiting execution...");
   const [isExecuting, setIsExecuting] = useState(false);
-  const [codes, setCodes] = useState<Record<string, string>>(BOILERPLATES);
+  
+  // Start with empty codes until the DB loads them
+  const [codes, setCodes] = useState<Record<string, string>>({ cpp: "", python: "", java: "" });
 
   useEffect(() => {
     return () => {
@@ -43,6 +40,15 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
       if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
     };
   }, []);
+
+  // Helper to fetch a random problem slug from the DB
+  const getRandomProblemSlug = async () => {
+    const { data } = await supabase.from('problems').select('slug');
+    if (data && data.length > 0) {
+      return data[Math.floor(Math.random() * data.length)].slug;
+    }
+    return "two-sum"; // Fallback
+  };
 
   const handleFindMatch = async () => {
     searchingRef.current = true;
@@ -52,64 +58,83 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
     setStrikes(0); 
     setMentorState("idle");
     setMentorData(null);
+    setActiveProblem(null);
+    setCodes({ cpp: "Loading mainframe...", python: "Loading mainframe...", java: "Loading mainframe..." });
     
-    const lobby = supabase.channel('global_lobby', {
-      config: { broadcast: { self: true } }
-    });
+    const lobby = supabase.channel('global_lobby', { config: { broadcast: { self: true } } });
 
-    searchTimeoutRef.current = setTimeout(() => {
+    searchTimeoutRef.current = setTimeout(async () => {
       if (searchingRef.current) {
         searchingRef.current = false;
         supabase.removeChannel(supabase.channel('global_lobby'));
+        
+        const randomSlug = await getRandomProblemSlug();
         
         setMatchId("solo_practice");
         setOpponent({ name: "Training_Bot", rank: "Unranked" });
         setMatchState("combat");
         setOutput("> MATCHMAKING TIMEOUT.\n> No opponents found.\n> Entering Solo Practice Mode.\n> GLHF.");
+        
+        establishCombatZone("solo_practice", "Training_Bot", randomSlug);
       }
     }, 15000);
 
     lobby
-      .on('broadcast', { event: 'looking_for_match' }, (payload) => {
+      .on('broadcast', { event: 'looking_for_match' }, async (payload) => {
         if (payload.payload.user_id !== userIdRef.current && searchingRef.current) {
           searchingRef.current = false; 
           const newMatchId = `match_${Math.random().toString(36).substring(7)}`;
           
+          // HOST DECIDES THE PROBLEM
+          const selectedSlug = await getRandomProblemSlug();
+          
           lobby.send({
             type: 'broadcast',
             event: 'match_found',
-            payload: { target_user: payload.payload.user_id, host_user: userIdRef.current, match_id: newMatchId }
+            payload: { target_user: payload.payload.user_id, host_user: userIdRef.current, match_id: newMatchId, problem_slug: selectedSlug }
           });
 
-          establishCombatZone(newMatchId, payload.payload.user_id);
+          establishCombatZone(newMatchId, payload.payload.user_id, selectedSlug);
         }
       })
       .on('broadcast', { event: 'match_found' }, (payload) => {
         if (payload.payload.target_user === userIdRef.current && searchingRef.current) {
           searchingRef.current = false;
-          establishCombatZone(payload.payload.match_id, payload.payload.host_user);
+          // JOINER RECEIVES THE PROBLEM
+          establishCombatZone(payload.payload.match_id, payload.payload.host_user, payload.payload.problem_slug);
         }
       })
       .subscribe((status) => {
         if (status === 'SUBSCRIBED') {
-          lobby.send({
-            type: 'broadcast',
-            event: 'looking_for_match',
-            payload: { user_id: userIdRef.current }
-          });
+          lobby.send({ type: 'broadcast', event: 'looking_for_match', payload: { user_id: userIdRef.current } });
         }
       });
   };
 
-  const establishCombatZone = (newMatchId: string, opponentId: string) => {
+  const establishCombatZone = async (newMatchId: string, opponentId: string, problemSlug: string) => {
     if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
-    
     supabase.removeChannel(supabase.channel('global_lobby'));
     
     setMatchId(newMatchId);
     setOpponent({ name: opponentId, rank: "Initiate" });
     setMatchState("combat");
-    setOutput(`> MATCH FOUND.\n> Connected to secure channel: ${newMatchId}\n> Opponent: ${opponentId}\n> GLHF.`);
+    setOutput(`> MATCH FOUND.\n> Connected to secure channel: ${newMatchId}\n> Opponent: ${opponentId}\n> Loading Mission Parameters...`);
+
+    // 1. Fetch Metadata from Postgres
+    const { data: problemMeta } = await supabase.from('problems').select('*').eq('slug', problemSlug).single();
+    setActiveProblem(problemMeta);
+
+    // 2. Fetch Boilerplates from Storage Vault
+    const vaultUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/problem-vault/${problemSlug}/engine.json`;
+    try {
+        const engineRes = await fetch(vaultUrl);
+        if (engineRes.ok) {
+           const engineData = await engineRes.json();
+           setCodes(engineData.boilerplates);
+        }
+    } catch (e) {
+        console.error("Failed to load boilerplates", e);
+    }
 
     const combatChannel = supabase.channel(newMatchId);
     
@@ -139,18 +164,13 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
     setMatchState("idle");
   };
 
-  // NEW: The AI Mentor Interceptor
   const triggerMentor = async () => {
     setMentorState("loading");
     try {
       const response = await fetch("/api/mentor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          problem: "Two Sum", 
-          code: codes[language], 
-          language: language 
-        }),
+        body: JSON.stringify({ problem: activeProblem?.title, code: codes[language], language }),
       });
       const data = await response.json();
       setMentorData(data);
@@ -164,29 +184,18 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
     editor.onDidPaste(() => {
       setStrikes((prev) => {
         const newStrikes = prev + 1;
-        
         if (newStrikes >= 3) {
           setMatchState("finished");
           setMatchResult("banned");
           setOutput(`> SECURITY BREACH DETECTED.\n> Multiple unauthorized code injections.\n> System locked. Match forfeited.`);
-          
           if (combatChannelRef.current) {
-            combatChannelRef.current.send({
-              type: 'broadcast',
-              event: 'opponent_disqualified',
-              payload: { loser: userIdRef.current } 
-            });
+            combatChannelRef.current.send({ type: 'broadcast', event: 'opponent_disqualified', payload: { loser: userIdRef.current } });
           }
         } else {
           setShowWarning(true);
           setTimeout(() => setShowWarning(false), 4000);
-          
-          // TRIGGER AI MENTOR ON FIRST OFFENSE
-          if (newStrikes === 1) {
-             triggerMentor();
-          }
+          if (newStrikes === 1) triggerMentor();
         }
-        
         return newStrikes;
       });
     });
@@ -197,10 +206,11 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
     setOutput("> Compiling and executing in secure sandbox...\n> Provisioning isolated container...\n");
 
     try {
+      // NEW: Send the problem slug to the backend so it knows which test cases to load
       const response = await fetch("/api/execute", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ language, code: codes[language] }),
+        body: JSON.stringify({ language, code: codes[language], problemSlug: activeProblem?.slug }),
       });
 
       const data = await response.json();
@@ -215,8 +225,6 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
         finalOutput = `[SUCCESS] Execution complete.\n\nOutput:\n${data.run.output}`;
       } else if (data.compile && data.compile.output) {
         finalOutput = `> COMPILE ERROR:\n${data.compile.output}`;
-      } else {
-        finalOutput = `> RAW SYSTEM RESPONSE:\n${JSON.stringify(data, null, 2)}`;
       }
 
       if (data.segfault_status === "ACCEPTED") {
@@ -226,18 +234,13 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
         setVictoryReason("solved");
         
         if (combatChannelRef.current && matchId !== "solo_practice") {
-          combatChannelRef.current.send({
-            type: 'broadcast',
-            event: 'match_over',
-            payload: { winner: userIdRef.current }
-          });
+          combatChannelRef.current.send({ type: 'broadcast', event: 'match_over', payload: { winner: userIdRef.current } });
         }
       } else if (data.segfault_status === "WRONG_ANSWER") {
         finalOutput += `\n\n> STATUS: WRONG ANSWER [Failed Test Cases]`;
       }
 
       setOutput(finalOutput);
-
     } catch (error) {
       setOutput(`> SEVERE: Backend execution route unreachable. Error: ${error}`);
     } finally {
@@ -252,6 +255,7 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
   return (
     <div className="flex flex-col animate-in fade-in zoom-in-95 duration-500 w-full h-[80vh] min-h-[600px] relative">
       
+      {/* MATCH OVERLAYS (Victory/Searching) remain exactly the same visually */}
       {matchState === "finished" && matchResult && (
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-zinc-950/90 backdrop-blur-md rounded-xl border border-zinc-800">
           <div className="flex flex-col items-center gap-6 p-10 bg-zinc-900 border border-zinc-700 rounded-2xl shadow-2xl w-full max-w-md text-center">
@@ -286,6 +290,7 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
                 setOpponent(null);
                 setStrikes(0);
                 setMentorState("idle");
+                setActiveProblem(null);
               }}
               className="w-full py-4 mt-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all bg-white text-black hover:bg-zinc-200 hover:scale-105 active:scale-95"
             >
@@ -360,26 +365,33 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
 
       <div className={`flex-1 border-x border-b border-zinc-800 rounded-b-xl overflow-hidden ${matchState !== 'combat' ? 'opacity-30 pointer-events-none' : ''}`}>
         <Group orientation="horizontal">
+          
+          {/* DYNAMIC LEFT PANEL: Database Problem Data */}
           <Panel defaultSize={35} minSize={25} className="bg-zinc-950 flex flex-col h-full overflow-y-auto">
             <div className="p-6">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-3 mb-4">
                 <Target className="w-5 h-5 text-green-500" />
-                <h3 className="text-lg font-bold text-white tracking-tight">Operation: Two Sum</h3>
+                <h3 className="text-lg font-bold text-white tracking-tight">
+                  {activeProblem ? activeProblem.title : "Awaiting Mission..."}
+                </h3>
+                {activeProblem && (
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-widest ${
+                    activeProblem.difficulty === 'Easy' ? 'bg-green-500/10 text-green-500 border border-green-500/20' :
+                    activeProblem.difficulty === 'Medium' ? 'bg-yellow-500/10 text-yellow-500 border border-yellow-500/20' :
+                    'bg-red-500/10 text-red-500 border border-red-500/20'
+                  }`}>
+                    {activeProblem.difficulty}
+                  </span>
+                )}
               </div>
               <div className="space-y-4 text-sm text-zinc-400 font-sans leading-relaxed">
-                <p>Given an array of integers <code className="bg-zinc-800 text-green-400 px-1 py-0.5 rounded text-xs font-mono">nums</code> and an integer <code className="bg-zinc-800 text-green-400 px-1 py-0.5 rounded text-xs font-mono">target</code>, return indices of the two numbers such that they add up to target.</p>
-                <p>You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.</p>
-                
-                <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 mt-6">
-                  <p className="font-mono text-xs text-zinc-500 mb-2 uppercase tracking-widest">Example 1:</p>
-                  <p className="font-mono text-sm text-white"><span className="text-zinc-500">Input:</span> nums = [2,7,11,15], target = 9</p>
-                  <p className="font-mono text-sm text-green-400"><span className="text-zinc-500">Output:</span> [0,1]</p>
-                </div>
-
-                <div className="flex items-start gap-3 bg-yellow-500/10 border border-yellow-500/20 text-yellow-500/80 p-4 rounded-lg mt-6">
-                  <AlertTriangle className="w-5 h-5 shrink-0" />
-                  <p className="text-xs">Can you come up with an algorithm that is less than <code className="font-mono bg-yellow-500/20 px-1 rounded text-yellow-500">O(n^2)</code> time complexity?</p>
-                </div>
+                {activeProblem ? (
+                  <p className="whitespace-pre-wrap">{activeProblem.description}</p>
+                ) : (
+                  <div className="flex items-center gap-2 text-zinc-600">
+                    <Activity className="w-4 h-4 animate-pulse" /> Fetching encrypted mission brief...
+                  </div>
+                )}
               </div>
             </div>
           </Panel>
@@ -402,7 +414,6 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
                   </div>
                 )}
 
-                {/* NEW: AI Mentor Floating Glassmorphism Overlay */}
                 {(mentorState === "loading" || mentorState === "visible") && (
                   <div className="absolute bottom-4 right-4 z-10 max-w-md bg-zinc-950/80 backdrop-blur-md border border-zinc-700 p-4 rounded-xl shadow-2xl animate-in slide-in-from-bottom-4 fade-in duration-300">
                     <div className="flex justify-between items-start mb-2">
@@ -430,7 +441,7 @@ export default function BattleArena({ currentTheme }: { currentTheme: any }) {
                   height="100%"
                   language={language}
                   theme="vs-dark"
-                  value={codes[language]}
+                  value={codes[language] || ""}
                   onChange={handleEditorChange}
                   onMount={handleEditorDidMount} 
                   options={{
